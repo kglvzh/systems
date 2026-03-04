@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package inventory;
+
+service InventoryControl {
+    rpc BulkUpdateStock(stream StockItem) returns (UpdateSummary) {}
+    rpc ClearData(Empty) returns (UpdateSummary) {}  // новый метод для очистки
+}
+
+message StockItem {
+    string product_id = 1;
+    string product_name = 2;
+    int32 quantity = 3;
+}
+
+message UpdateSummary {
+    int32 total_processed = 1;
+    int32 successful_updates = 2;
+    int32 failed_updates = 3;
+    string message = 4;
+}
+
+message Empty {}  // пустое сообщение
