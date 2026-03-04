@@ -70,6 +70,20 @@ python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. inventory.pro
 
 ---
 
+## Запуск сервера
+<img width="536" height="196" alt="image" src="https://github.com/user-attachments/assets/1f6427cb-febe-487b-bb50-19dde16bea98" />
+
+---
+
+## Вывод на сервере
+<img width="589" height="416" alt="image" src="https://github.com/user-attachments/assets/c6e703b0-784d-4913-afac-a8435402d151" />
+
+## Отображение в клиенте
+<img width="658" height="419" alt="image" src="https://github.com/user-attachments/assets/05f838cd-bbf0-4960-a8cd-312de490c25f" />
+
+
+---
+
 ## Реализация сервера
 Серверная часть реализована в файле:
 
