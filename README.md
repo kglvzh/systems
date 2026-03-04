@@ -107,15 +107,6 @@ stub = inventory_pb2_grpc.InventoryControlStub(channel)
 
 ---
 
-## Используемые технологии
-- Python 3
-- gRPC
-- Protocol Buffers
-- Virtual Environment (venv)
-- Pickle (для сериализации данных)
-
----
-
 ## Запуск проекта
 
 ### 1️⃣ Активация виртуального окружения
