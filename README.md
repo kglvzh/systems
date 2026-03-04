@@ -75,15 +75,6 @@ python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. inventory.pro
 
 ---
 
-## Вывод на сервере
-<img width="589" height="416" alt="image" src="https://github.com/user-attachments/assets/c6e703b0-784d-4913-afac-a8435402d151" />
-
-## Отображение в клиенте
-<img width="658" height="419" alt="image" src="https://github.com/user-attachments/assets/05f838cd-bbf0-4960-a8cd-312de490c25f" />
-
-
----
-
 ## Реализация сервера
 Серверная часть реализована в файле:
 
@@ -99,6 +90,9 @@ python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. inventory.pro
 
 Сервер запускается на порту **50051** и ожидает подключения клиентов.
 
+## Вывод на сервере
+<img width="589" height="416" alt="image" src="https://github.com/user-attachments/assets/c6e703b0-784d-4913-afac-a8435402d151" />
+
 ---
 
 ## Реализация клиента
@@ -111,6 +105,8 @@ python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. inventory.pro
 channel = grpc.insecure_channel('localhost:50051')
 stub = inventory_pb2_grpc.InventoryControlStub(channel)
 ```
+## Отображение в клиенте
+<img width="658" height="419" alt="image" src="https://github.com/user-attachments/assets/05f838cd-bbf0-4960-a8cd-312de490c25f" />
 
 Клиент позволяет:
 - Добавлять товары в интерактивном режиме;
