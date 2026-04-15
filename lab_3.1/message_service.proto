@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package message;
+
+service MessageService {
+  rpc CheckPassword (PasswordRequest) returns (PasswordResponse);
+  rpc Transliterate (TextRequest) returns (TextResponse);
+  rpc ExtractEmails (TextRequest) returns (EmailListResponse);
+}
+
+message PasswordRequest {
+  string password = 1;
+}
+
+message PasswordResponse {
+  string strength = 1;
+}
+
+message TextRequest {
+  string text = 1;
+}
+
+message TextResponse {
+  string result = 1;
+}
+
+message EmailListResponse {
+  repeated string emails = 1;
+}
