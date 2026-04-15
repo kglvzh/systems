@@ -33,7 +33,7 @@
 
 ---
 
-## Архитектура инструментов PEST API с Nginx
+## Архитектура инструментов REST API с Nginx
 
 ```mermaid
 flowchart LR
