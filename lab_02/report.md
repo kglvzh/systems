@@ -33,6 +33,28 @@
 
 ---
 
+## Архитектура инструментов PEST API с Nginx
+
+```
+flowchart LR
+    client["Client (curl / browser)"]
+    nginx["Nginx (порт 8080)\nОбратный прокси"]
+    api["Flask API (порт 5000)\napp.py"]
+    storage["Storage (список покупок\nв памяти сервера)"]
+    cbr["ЦБ РФ\n(cbr.ru)"]
+
+    client -->|HTTP запрос| nginx
+    nginx -->|proxy_pass /api/| api
+    api -->|CRUD (GET/POST/PUT/DELETE)| storage
+    storage -->|JSON ответ| api
+    api -->|запрос курсов| cbr
+    cbr -->|XML с курсами валют| api
+    api -->|JSON ответ| nginx
+    nginx -->|HTTP ответ| client
+```
+
+---
+
 ## 4. Ход выполнения
 
 ### Часть 1. Реализация REST API на Flask
