@@ -45,13 +45,13 @@ flowchart LR
 
     client -->|HTTP запрос| nginx
     nginx -->|proxy_pass /api/| api
-    api -->|CRUD (GET/POST/PUT/DELETE)| storage
+    api -->|CRUD операции GET POST PUT DELETE| storage
     storage -->|JSON ответ| api
     api -->|запрос курсов| cbr
     cbr -->|XML с курсами валют| api
     api -->|JSON ответ| nginx
     nginx -->|HTTP ответ| client
-```
+
 
 ---
 
