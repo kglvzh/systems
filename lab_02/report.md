@@ -35,7 +35,7 @@
 
 ## Архитектура инструментов PEST API с Nginx
 
-```
+```mermaid
 flowchart LR
     client["Client (curl / browser)"]
     nginx["Nginx (порт 8080)\nОбратный прокси"]
