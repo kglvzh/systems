@@ -3,7 +3,6 @@
 ## Тема. Разработка REST API и настройка обратного прокси Nginx
 
 **Группа:** ЦИБ-241  
-**Дата:** 17.03.2026  
 **Вариант:** 3
 
 ---
@@ -200,7 +199,7 @@ http {
 **Запуск:**
 ```bash
 cd D:\nginx-1.28.3
-start nginx.exe
+.\nginx.exe
 ```
 
 ---
@@ -213,17 +212,11 @@ curl.exe -s http://127.0.0.1:5000/api/items
 ```
 
 *Результат:*
-```json
-[
-    {"id": 1, "product_name": "Молоко", "quantity": 2},
-    {"id": 2, "product_name": "Хлеб", "quantity": 1}
-]
-```
 
 
 <img width="397" height="167" alt="image" src="https://github.com/user-attachments/assets/331e79d9-555b-40dc-9942-94dd69aee4a1" />
 
-
+---
 
 **POST /api/items** - добавление продукта.
 ```bash
@@ -235,23 +228,31 @@ curl.exe -X POST http://127.0.0.1:5000/api/items -H "Content-Type: application/j
 
 <img width="407" height="103" alt="image" src="https://github.com/user-attachments/assets/a4fd8bbc-1bfc-48b3-bfd8-d0d7e140ad27" />
 
+---
 
 **PUT /api/items/1** - изменение уже существующего продукта.
 ```bash
 curl.exe -X PUT http://127.0.0.1:5000/api/items/1 -H "Content-Type: application/json" -d '{\"quantity\": 10}'
 ```
 
+*Результат:*
+
+
 <img width="369" height="101" alt="image" src="https://github.com/user-attachments/assets/2e0dfe4c-92fb-42a0-b00f-b0c67bb883f1" />
 
+---
 
 **DELETE /api/items/3** - удаление продукта по id.
 ```bash
 curl.exe -X DELETE http://127.0.0.1:5000/api/items/3
 ```
 
+*Результат:*
+
 
 <img width="408" height="63" alt="image" src="https://github.com/user-attachments/assets/320109a9-a457-4a0d-9a16-0937ef5934ba" />
 
+---
 
 **GET /api/currency/USD** - получение курса валют на текущую дату.
 ```bash
@@ -259,29 +260,11 @@ curl.exe -s http://127.0.0.1:5000/api/currency
 ```
 
 *Результат:*
-```json
-{
-    "date": "15.04.2026",
-    "rates": [
-        {
-            "code": "AUD",
-            "name": "Австралийский доллар",
-            "value": 53.7268,
-            "nominal": 1
-        },
-        {
-            "code": "AZN",
-            "name": "Азербайджанский манат",
-            "value": 44.6195,
-            "nominal": 1
-        }
-    ]
-}
-```
 
 
 <img width="413" height="263" alt="image" src="https://github.com/user-attachments/assets/8a78c9d9-d3bc-4310-a23f-e48bcea0fdfb" />
 
+---
 
 **GET через Nginx:**
 ```bash
