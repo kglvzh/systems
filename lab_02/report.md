@@ -51,7 +51,7 @@ flowchart LR
     cbr -->|XML с курсами валют| api
     api -->|JSON ответ| nginx
     nginx -->|HTTP ответ| client
-
+```
 
 ---
 
