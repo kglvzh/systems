@@ -28,6 +28,7 @@
 ## Теоретический расчет полосы пропускания
 
 Формула расчета:
+
 $$
 Bandwidth\ (бит/с) = \frac{ActiveNodes \times Fanout \times PacketSize \times Overhead \times 8}{Interval}
 $$
