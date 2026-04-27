@@ -267,29 +267,28 @@ if __name__ == '__main__':
 **Задачи:**
 
 gRPC-сервис с методами:
-- `CheckPassword` — проверка сложности пароля (длина ≥8, цифры, спецсимволы)
-- `Transliterate` — транслитерация русского текста в латиницу
-- `ExtractEmails` — извлечение всех email-адресов из текста
+- `CheckPassword` — проверка сложности пароля (длина ≥8, цифры, спецсимволы);
+- `Transliterate` — транслитерация русского текста в латиницу;
+- `ExtractEmails` — извлечение всех email-адресов из текста.
 
 RabbitMQ Producer отправляет сообщения с префиксами:
-- `password:` — для проверки пароля (пример: `password:Qwerty123!`)
-- `translit:` — для транслитерации (пример: `translit:привет мир`)
-- `email:` — для поиска email (пример: `email:Мои почты test@mail.ru`)
+- `password:` — для проверки пароля (пример: `password:Qwerty123!`);
+- `translit:` — для транслитерации (пример: `translit:привет мир`);
+- `email:` — для поиска email (пример: `email:Мои почты test@mail.ru`).
 
 **Структура проекта:**
 
-​​```markdown
-лаба 3.1/
-├── message_service.proto          # Контракт с 3 методами
-├── grpc_server.py                 # Реализация gRPC сервера
-├── grpc_client.py                 # Тестовый клиент (прямой вызов)
-├── producer.py                    # Отправляет задачи в RabbitMQ
-├── consumer.py                    # Получает задачи, вызывает gRPC
-├── message_service_pb2.py         # Сгенерированный код
-├── message_service_pb2_grpc.py    # Сгенерированный код
-├── venv/                          # Виртуальное окружение
-└── README.md                      # Отчёт
-​```
+​​| Файл | Назначение |
+|------|------------|
+| `message_service.proto` | Контракт gRPC-сервиса (описание методов и структур данных) |
+| `grpc_server.py` | Реализация gRPC-сервера с методами `CheckPassword`, `Transliterate`, `ExtractEmails` |
+| `grpc_client.py` | Тестовый клиент для прямой проверки gRPC-сервера (без RabbitMQ) |
+| `producer.py` | Отправляет задачи в очередь RabbitMQ с префиксами `password:`, `translit:`, `email:` |
+| `consumer.py` | Забирает задачи из очереди, парсит префикс, вызывает нужный метод gRPC |
+| `message_service_pb2.py` | Сгенерированный код Protocol Buffers (структуры данных) |
+| `message_service_pb2_grpc.py` | Сгенерированный код gRPC (клиентская и серверная заглушки) |
+| `venv/` | Виртуальное окружение Python (изолированные зависимости) |
+| `README.md` | Отчёт по лабораторной работе |
 
 **Алгоритм запуска:**
 
