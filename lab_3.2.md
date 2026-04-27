@@ -22,6 +22,12 @@ $$
 Bandwidth\ (бит/с) = \frac{ActiveNodes \times Fanout \times PacketSize \times Overhead \times 8}{Interval}
 $$
 
+Где:
+- $ActiveNodes = 95$ (100 узлов, 5% отказавших)
+- $PacketSize = 1024$ байт
+- $Overhead = 1.2$
+- $Interval = 0.2$ сек
+
 | Fanout | Bandwidth (бит/с) |
 |--------|------------------|
 | 2 | 933 888 |
