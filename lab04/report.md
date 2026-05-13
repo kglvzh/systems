@@ -419,7 +419,7 @@ py client.py
 
 ## 3. Демонстрация обработки ошибок
 
-Для тестирования обработки ошибок разработан отдельный скрипт test_errors.py.
+Для тестирования обработки ошибок разработан отдельный скрипт [test_errors.py](lab04/test_errors.py).
 
 <img width="767" height="496" alt="image" src="https://github.com/user-attachments/assets/de64e450-f8c6-4a43-a20e-35ba4d42226f" />
 
