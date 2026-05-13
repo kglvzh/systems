@@ -51,40 +51,36 @@ $$
 
 ### График 1: Bandwidth vs Fanout (теория)
 
-<img width="611" height="359" alt="image" src="https://github.com/user-attachments/assets/8bd78184-6069-4116-9a0a-38290582151d" />
+<img width="695" height="359" alt="image" src="https://github.com/user-attachments/assets/6319113d-403e-4b9a-8e31-311134c75782" />
+
 
 
 Сводка: полоса пропускания растёт линейно с увеличением Fanout. При Fanout=10 нагрузка в 5 раз выше, чем при Fanout=2.
 
-### График 2: Время конвергенции vs Fanout
-
-<img width="625" height="361" alt="image" src="https://github.com/user-attachments/assets/5af2fea1-f54c-442f-ad7e-e9b7ba6a6786" />
-
 
 Сводка: при всех значениях Fanout конвергенция достигается за 1 раунд. Увеличение Fanout не ускоряет обнаружение из-за нулевых потерь пакетов.
 
-### График 3: Трафик vs Fanout
+### График 2: Влияние на производительность
 
-<img width="606" height="355" alt="image" src="https://github.com/user-attachments/assets/34ed08d4-dffa-402e-9ee9-bbb9a7ac9ca8" />
+<img width="828" height="269" alt="image" src="https://github.com/user-attachments/assets/2c7c122b-af6e-430d-b73e-a5759b0215b6" />
+
 
 
 Сводка: трафик растёт линейно с Fanout. Минимальный трафик при Fanout=2 (190 сообщений), максимальный при Fanout=10 (950 сообщений).
 
-### График 4: Trade-off анализ (нормированные метрики)
+### График 3: Тепловая карта распространения информации о сбое
 
-<img width="582" height="354" alt="image" src="https://github.com/user-attachments/assets/4afd8bfe-08ca-4d66-9d81-4a6a9a6057c9" />
+<img width="828" height="383" alt="image" src="https://github.com/user-attachments/assets/56e6ac53-4d48-4c59-a19a-043a20dfe247" />
 
 
-Сводка: поскольку время конвергенции не меняется, оптимальный Fanout с точки зрения формулы — минимальный (2). Увеличение Fanout только увеличивает трафик без выигрыша в скорости.
 
 ## Сравнительный анализ протоколов (Gossip vs Heartbeat vs Ping)
 
-### График 5: Сравнение времени конвергенции и трафика
+### График 4: Сравнение времени конвергенции и трафика
 
-<img width="825" height="270" alt="image" src="https://github.com/user-attachments/assets/825378d2-7aa5-4b84-888e-04c64fd12b3b" />
+<img width="829" height="277" alt="image" src="https://github.com/user-attachments/assets/1532352e-5c96-4090-b76a-bcd90f3b703b" />
 
 
-Сводка: все три протокола показывают конвергенцию за 1 раунд. Разница в трафике: Heartbeat ~9500 сообщений, Gossip ~190, Ping ~100. Heartbeat неприменим для больших сетей, Ping экономичен но медленен при потерях пакетов, Gossip — баланс.
 
 ### Сводная таблица (среднее по 10 прогонам)
 | Протокол | Конвергенция (раунды) | Сообщений |
